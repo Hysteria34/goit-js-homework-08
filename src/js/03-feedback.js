@@ -16,7 +16,10 @@ function formSubmit(event){
     event.preventDefault();
     event.currentTarget.reset();
     localStorage.removeItem('feedback-form-state');
-    console.log("Delete text");
+
+    console.clear();
+    console.log(formData);
+
 }
 function formInput(event){
     formData[event.target.name]=event.target.value; 
@@ -31,5 +34,9 @@ function populateOnFormInput(){
         formData.email = savedMessage.email;
         formData.message = savedMessage.message;
         console.log(savedMessage);
+    }
+    else {
+        formData.email = '';
+        formData.message = '' ;
     }
 }
